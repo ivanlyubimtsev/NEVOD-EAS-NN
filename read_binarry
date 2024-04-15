@@ -18,8 +18,10 @@ def read_binarry(binary_file):
         q1, p1 = 5, 1
         # СТАВИМ 4 ИЗ-ЗА СТРУКТУРЫ БИНАРНОГО ФАЙЛА
         data_byte = binary_file.read(4 * q1)
+        # СТАВИМ ЧЕКПОИНТ
         binary_file.tell()
         data_byte = binary_file.read(4 * p1)
+        # РАСПАКОВЫВАЕМ ЭЛЕМЕНТ ФАЙЛА
         tetta = struct.unpack('f' * p1, data_byte)[0] 
 
         angle_tetta.append(tetta)        
